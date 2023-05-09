@@ -22,9 +22,9 @@ CP__SCORE.innerHTML = CPscore
 PLAYERS__CHOICE.forEach(function (choice) {
     choice.addEventListener("click", function () {
         playersChoice = choice
-        
+
         letComputerChose()
-        
+
         battle()
     })
 })
@@ -34,12 +34,6 @@ function letComputerChose() {
     if (computersChoice <= 0.3333) computersChoice = ROCK
     else if (computersChoice <= 0.6666) computersChoice = PAPER
     else computersChoice = SCISSORS
-}
-
-function createLi(theChoice, ul) {
-    const LI = document.createElement("li")
-    LI.innerHTML = theChoice.innerHTML
-    ul.appendChild(LI)
 }
 
 function battle() {
@@ -69,4 +63,10 @@ function whoWins() {
 
     if (winner === "computer") CPscore = CPscore + 1
     if (winner === "player") score = score + 1
+}
+
+function createLi(theChoice, ul) {
+    const LI = document.createElement("li")
+    LI.innerHTML = theChoice.innerHTML
+    ul.appendChild(LI)
 }
