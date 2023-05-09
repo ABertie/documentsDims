@@ -1,0 +1,82 @@
+:root {
+    --brand-color: #73AB84;
+    --dark-color: #272838;
+    --mid-color: #777898;
+    --light-color: #EBECF4;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+} 
+
+body{
+    text-align: center;
+}
+
+aside{
+    display: flex;
+
+    padding: 0 30%;
+}
+
+aside article{
+    width: 50%;
+}
+
+aside ul {
+    display: flex;
+    justify-content: center;
+    list-style-type: none;
+}
+
+main{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 2fr 2fr;
+    gap: 0 1em;
+
+    width: 320px;
+    margin: 0 auto;
+}
+
+main button{
+    aspect-ratio: 1/1;
+    width: 4fr;
+    border: none;
+    border-radius: 50%;
+    background-color: var(--mid-color);
+    color: var(--dark-color);
+
+    font-size: 8vh;
+}
+
+.rock {grid-area: 1/2/2/4;}
+.paper {grid-area: 2/1/3/3;}
+.scissors {grid-area: 2/3/2/5;}
+
+.battle {
+    display: none;
+    align-items: center;
+    justify-content: center;
+    gap: 1em;
+
+    position: fixed;
+    inset: 35%;
+
+    min-width: 10%;
+    border-radius: 2em;
+
+    background-color: var(--brand-color);
+    color: var(--light-color);
+
+    font-size: 2em;
+}
+
+#playersChoice, #computersChoice {
+    width: 1em;
+
+    color: var(--mid-color);
+    font-size: 1.5em;
+}

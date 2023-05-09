@@ -18,14 +18,32 @@
 <body>
     <header>
         <h1>Rock Paper Scissor</h1>
-        <!-- <p>score: <span id="score"></span></p> -->
     </header>
+    
+    <aside>
+        <article class="playersChoice">
+            <p><i class="fa-solid fa-user"></i></p>
+            <p class="score">score: <span id="score"></span></p>
+            <ul></ul>
+        </article>
+        <article class="computersChoice">
+            <p><i class="fa-solid fa-robot"></i></p>
+            <p class="score">score: <span id="CPscore"></span></p>
+            <ul></ul>
+        </article>
+    </aside>
 
-    <main class="playersChoice">
+    <main class="Choice">
         <button class="rock"><i class="fa-solid fa-hand-back-fist"></i></button>
         <button class="paper"><i class="fa-solid fa-hand"></i></button>
         <button class="scissors"><i class="fa-solid fa-hand-scissors"></i></button>
     </main>
+
+    <div class="battle">
+        <span id="playersChoice"></span>
+        <span><i class="fa-solid fa-bolt"></i></span>
+        <span id="computersChoice"></span>
+    </div>
 
     <!-- script -->
     <script src="script.js" defer></script>
