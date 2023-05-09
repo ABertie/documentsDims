@@ -12,7 +12,18 @@
 } 
 
 body{
+    display: flex;
+    flex-direction: column;
+    gap: 3em;
+
+    margin: 8vh auto ;
+    background-color: var(--dark-color);
+    color: var(--mid-color);
     text-align: center;
+}
+
+h1 {
+    color: var(--brand-color);
 }
 
 aside{
@@ -28,6 +39,8 @@ aside article{
 aside ul {
     display: flex;
     justify-content: center;
+
+    color: var(--light-color);
     list-style-type: none;
 }
 
@@ -46,8 +59,8 @@ main button{
     width: 4fr;
     border: none;
     border-radius: 50%;
-    background-color: var(--mid-color);
-    color: var(--dark-color);
+    background-color: var(--brand-color);
+    color: var(--light-color);
 
     font-size: 8vh;
 }
@@ -68,7 +81,7 @@ main button{
     min-width: 10%;
     border-radius: 2em;
 
-    background-color: var(--brand-color);
+    background-color: var(--mid-color);
     color: var(--light-color);
 
     font-size: 2em;
@@ -77,6 +90,5 @@ main button{
 #playersChoice, #computersChoice {
     width: 1em;
 
-    color: var(--mid-color);
     font-size: 1.5em;
 }
