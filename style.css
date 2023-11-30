@@ -9,14 +9,14 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-} 
+}
 
-body{
+body {
     display: flex;
     flex-direction: column;
     gap: 3em;
 
-    margin: 8vh auto ;
+    margin: 8vh auto;
     background-color: var(--dark-color);
     color: var(--mid-color);
     text-align: center;
@@ -26,25 +26,30 @@ h1 {
     color: var(--brand-color);
 }
 
-aside{
+aside {
     display: flex;
 
     padding: 0 30%;
 }
 
-aside article{
+aside article {
     width: 50%;
 }
 
 aside ul {
     display: flex;
     justify-content: center;
+    gap: .5em;
 
     color: var(--light-color);
     list-style-type: none;
 }
 
-main{
+.computersChoice ul {
+    transform: scaleX(-1);
+}
+
+main {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
     grid-template-rows: 2fr 2fr;
@@ -54,7 +59,7 @@ main{
     margin: 0 auto;
 }
 
-main button{
+main button {
     aspect-ratio: 1/1;
     width: 4fr;
     border: none;
@@ -65,9 +70,26 @@ main button{
     font-size: 8vh;
 }
 
-.rock {grid-area: 1/2/2/4;}
-.paper {grid-area: 2/1/3/3;}
-.scissors {grid-area: 2/3/2/5;}
+.rock {
+    grid-area: 1/2/2/4;
+}
+
+.paper {
+    grid-area: 2/1/3/3;
+}
+
+.fa-hand-back-fist,
+.fa-hand {
+    transform: rotate(90deg);
+}
+
+.scissors {
+    grid-area: 2/3/2/5;
+}
+
+.fa-hand-scissors {
+    transform: scaleX(-1);
+}
 
 .battle {
     display: none;
@@ -78,7 +100,6 @@ main button{
     position: fixed;
     inset: 35%;
 
-    min-width: 10%;
     border-radius: 2em;
 
     background-color: var(--mid-color);
@@ -87,8 +108,78 @@ main button{
     font-size: 2em;
 }
 
-#playersChoice, #computersChoice {
-    width: 1em;
-
+#playersChoice,
+#computersChoice {
     font-size: 1.5em;
+}
+
+#playersChoice {
+    animation: playerBattle 3s;
+}
+
+#computersChoice {
+    transform: scaleX(-1);
+    animation: computerBattle 3s;
+}
+
+@keyframes playerBattle {
+    0% {
+        transform: scaleX(-1);
+        transform: rotate(0deg);
+    }
+
+    15% {
+        transform: rotate(-50deg);
+    }
+
+    30% {
+        transform: rotate(0deg);
+    }
+
+    50% {
+        transform: rotate(-50deg);
+    }
+
+    65% {
+        transform: rotate(0deg);
+    }
+
+    90% {
+        transform: rotate(-50deg);
+    }
+
+    100% {
+        transform: rotate(0deg);
+    }
+}
+
+@keyframes computerBattle {
+    0% {
+        transform: scaleX(-1);
+        transform: rotate(0deg);
+    }
+
+    15% {
+        transform: rotate(-50deg);
+    }
+
+    30% {
+        transform: rotate(0deg);
+    }
+
+    50% {
+        transform: rotate(-50deg);
+    }
+
+    65% {
+        transform: rotate(0deg);
+    }
+
+    90% {
+        transform: rotate(-50deg);
+    }
+
+    100% {
+        transform: rotate(0deg);
+    }
 }

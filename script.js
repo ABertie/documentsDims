@@ -39,9 +39,10 @@ function letComputerChose() {
 function battle() {
     whoWins()
     BATTLE.style.display = "flex"
-    document.querySelector("#playersChoice").innerHTML = playersChoice.innerHTML
-    document.querySelector("#computersChoice").innerHTML = ""
+    document.querySelector("#playersChoice").innerHTML = ROCK.innerHTML
+    document.querySelector("#computersChoice").innerHTML = ROCK.innerHTML
     setTimeout(() => {
+        document.querySelector("#playersChoice").innerHTML = playersChoice.innerHTML
         document.querySelector("#computersChoice").innerHTML = computersChoice.innerHTML
         setTimeout(() => {
             BATTLE.style.display = "none"
@@ -49,8 +50,8 @@ function battle() {
             CP__SCORE.innerHTML = CPscore
             createLi(playersChoice, PLAYER__UL)
             createLi(computersChoice, COMPUTER__UL)
-        }, 2000);
-    }, 1000);
+        }, 1000);
+    }, 3000);
 }
 
 function whoWins() {
