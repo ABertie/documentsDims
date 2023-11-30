@@ -1,26 +1,28 @@
-const SCORE = document.querySelector("#score")
-const CP__SCORE = document.querySelector("#CPscore")
-const BATTLE = document.querySelector(".battle")
+const SCORE = document.querySelector("#score") // player score
+const CP__SCORE = document.querySelector("#CPscore") // computer score
+const BATTLE = document.querySelector(".battle") // battle animation 
 
-const COMPUTER__UL = document.querySelector(".computersChoice ul")
-const PLAYER__UL = document.querySelector(".playersChoice ul")
+const COMPUTER__UL = document.querySelector(".computersChoice ul") // computer previes choice
+const PLAYER__UL = document.querySelector(".playersChoice ul") // player previes choice
 
-const PLAYERS__CHOICE = document.querySelectorAll(".Choice button")
-const ROCK = document.querySelector(".rock")
-const PAPER = document.querySelector(".paper")
-const SCISSORS = document.querySelector(".scissors")
+const PLAYERS__CHOICE = document.querySelectorAll(".Choice button") // players choices
+const ROCK = document.querySelector(".rock") // rock button
+const PAPER = document.querySelector(".paper") // papeer button
+const SCISSORS = document.querySelector(".scissors") // scissors button
 
-let computersChoice
-let playersChoice
+let computersChoice // computers present choise
+let playersChoice // players present choise
 
-let score = 0
-SCORE.innerHTML = score
+let score = 0 // player score
+SCORE.innerHTML = score // player score
 
-let CPscore = 0
-CP__SCORE.innerHTML = CPscore
+let CPscore = 0 // computer score
+CP__SCORE.innerHTML = CPscore // computer score
 
 PLAYERS__CHOICE.forEach(function (choice) {
+    // when player choice a button
     choice.addEventListener("click", function () {
+        // the choice will become playersChoise
         playersChoice = choice
 
         letComputerChose()
@@ -29,6 +31,7 @@ PLAYERS__CHOICE.forEach(function (choice) {
     })
 })
 
+// make computer make a choise
 function letComputerChose() {
     computersChoice = Math.random()
     if (computersChoice <= 0.3333) computersChoice = ROCK
@@ -36,6 +39,7 @@ function letComputerChose() {
     else computersChoice = SCISSORS
 }
 
+// animation
 function battle() {
     whoWins()
     BATTLE.style.display = "flex"
@@ -54,6 +58,7 @@ function battle() {
     }, 3000);
 }
 
+// compare computerChoise and playerChoise and set score on the winner
 function whoWins() {
     let winner
     if (computersChoice === playersChoice) winner = "no one"
@@ -66,6 +71,7 @@ function whoWins() {
     if (winner === "player") score = score + 1
 }
 
+// set previes choice
 function createLi(theChoice, ul) {
     const LI = document.createElement("li")
     LI.innerHTML = theChoice.innerHTML
